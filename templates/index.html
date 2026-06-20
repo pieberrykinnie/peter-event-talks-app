@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View the latest Google BigQuery release notes and updates.">
+    <title>BigQuery Release Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fa-solid fa-database"></i>
+                    <h1>BQ Updates</h1>
+                </div>
+                <button id="refresh-btn" class="refresh-btn" aria-label="Refresh notes">
+                    <i class="fa-solid fa-arrow-rotate-right" id="refresh-icon"></i>
+                    <span>Refresh</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div id="loader" class="loader-container">
+                <div class="spinner"></div>
+                <p>Fetching the latest release notes...</p>
+            </div>
+            <div id="error-message" class="error-container hidden">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p id="error-text">Failed to load updates.</p>
+            </div>
+            <div id="notes-container" class="notes-container hidden">
+                <!-- Notes will be injected here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
