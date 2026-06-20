@@ -9,6 +9,8 @@
     --twitter: #1da1f2;
     --twitter-hover: #1a91da;
     --danger: #ef4444;
+    --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+    --btn-secondary-border: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -314,9 +316,9 @@ header {
 }
 
 .copy-btn {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--btn-secondary-bg);
     color: var(--text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--btn-secondary-border);
     padding: 0.5rem 1rem;
     border-radius: 999px;
     font-size: 0.875rem;
@@ -354,4 +356,62 @@ header {
         width: 100%;
         justify-content: center;
     }
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.05);
+    color: #eab308; /* Yellow for sun */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+body.light-theme {
+    --bg-color: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(15, 23, 42, 0.08);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --btn-secondary-bg: rgba(15, 23, 42, 0.05);
+    --btn-secondary-border: rgba(15, 23, 42, 0.1);
+    
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.08) 0px, transparent 50%);
+}
+
+body.light-theme .theme-toggle {
+    background: rgba(0, 0, 0, 0.05);
+    color: #4f46e5; /* Indigo/purple for moon */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .note-date {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .note-content code {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .note-content pre {
+    background: rgba(0, 0, 0, 0.05);
 }
